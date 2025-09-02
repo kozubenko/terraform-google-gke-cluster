@@ -58,7 +58,7 @@ jobs:
   # Update PR status in Infracost Cloud when PR to main
   infracost-pull-request-status-update:
     name: Infracost PR Status Update
-    if: github.event_name == 'pull_request' && github.event.action == 'closed' && github.base_ref == 'main'
+    if: github.event_name == 'pull_request' && github.event.action == 'closed' && github.event.pull_request.base.ref == 'main'
     runs-on: ubuntu-latest
     steps:
       - name: Infracost PR Status Update
