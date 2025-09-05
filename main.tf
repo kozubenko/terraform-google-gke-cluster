@@ -25,6 +25,7 @@ resource "google_container_cluster" "this" {
 
   # Node configuration for metadata
   node_config {
+    disk_size_gb   = 50
     workload_metadata_config {
       mode = "GKE_METADATA"
     }
